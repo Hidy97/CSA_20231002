@@ -22,9 +22,11 @@ public class RokaRudi {
         String[] szin = {"P", "T", "M", "S"};
         String[] ertek = {"Á", "K", "J", "IX", "X", "VIII"};
 
+        int index = 1;
         for (String sz : szin) {
             for (int e = 0; e < ertek.length && e < pakli.length; e++) {
-                //pakli = szin + "_" + e;
+                pakli[index] = szin + "_" + e;
+                index++;
             }
         }
 
@@ -45,7 +47,6 @@ public class RokaRudi {
         switch (oszlop) {
             case 1:
                 for (int i = 0; i < 7; i++) {
-
                     ujPakli[i] = 20 - (i - 1) * 3;
                     ujPakli[i + 7] = 19 - (i - 1) * 3;
                     ujPakli[i + 14] = 21 - (i - 1) * 3;
