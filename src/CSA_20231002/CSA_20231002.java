@@ -1,8 +1,8 @@
-package rokarudi;
+package CSA_20231002;
 
 import java.util.Scanner;
 
-public class RokaRudi {
+public class CSA_20231002 {
 
     private static String[] pakli = new String[22];
     private static Scanner sc = new Scanner(System.in);
@@ -22,10 +22,10 @@ public class RokaRudi {
         String[] szin = {"P", "T", "M", "S"};
         String[] ertek = {"Á", "K", "J", "IX", "X", "VIII"};
 
-        int index = 1;
+        int index = 0;
         for (String sz : szin) {
-            for (int e = 0; e < ertek.length && e < pakli.length; e++) {
-                pakli[index] = szin + "_" + e;
+            for (int e = 11; e < ertek.length && e < pakli.length; e++) {
+                pakli[index] = sz + "_" + e;
                 index++;
             }
         }
