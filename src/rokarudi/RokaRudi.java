@@ -10,8 +10,11 @@ public class RokaRudi {
     public static void main(String[] args) {
         feltolt();
         megjelenit();
-        int oszlop = sc.nextInt();
-        kever(oszlop);
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Válasszon egy oszlopot(1-3): ");
+            int oszlop = sc.nextInt();
+            kever(oszlop);
+        }
         ezVolt();
     }
 
@@ -36,18 +39,13 @@ public class RokaRudi {
         }
     }
 
-
-
-    private static void ezVolt() {
-        System.out.println("Ez volt az a lap: " + pakli[11] + "?");
-    }
-
     private static void kever(int oszlop) {
         String[] ujPakli = new String[22];
-        
+
         switch (oszlop) {
             case 1:
                 for (int i = 0; i < 7; i++) {
+
                     ujPakli[i] = 20 - (i - 1) * 3;
                     ujPakli[i + 7] = 19 - (i - 1) * 3;
                     ujPakli[i + 14] = 21 - (i - 1) * 3;
@@ -55,23 +53,29 @@ public class RokaRudi {
                 break;
             case 2:
                 for (int i = 0; i < 7; i++) {
+                    //más algoritmus
                     ujPakli[i] = 20 - (i - 1) * 3;
-                    ujPakli[i + 7] = 19 - (i - 1) * 3;
-                    ujPakli[i + 14] = 21 - (i - 1) * 3;
+                    ujPakli[i + 7] = 21 - (i - 1) * 3;
+                    ujPakli[i + 14] = 19 - (i - 1) * 3;
                 }
                 break;
             case 3:
+                //más algoritmus
                 for (int i = 0; i < 7; i++) {
-                    ujPakli[i] = 20 - (i - 1) * 3;
-                    ujPakli[i + 7] = 19 - (i - 1) * 3;
+                    ujPakli[i] = 19 - (i - 1) * 3;
+                    ujPakli[i + 7] = 20 - (i - 1) * 3;
                     ujPakli[i + 14] = 21 - (i - 1) * 3;
                 }
                 break;
             default:
                 throw new AssertionError();
         }
-        
+
         pakli = ujPakli;
+    }
+
+    private static void ezVolt() {
+        System.out.println("Ez volt az a lap: " + pakli[11] + "?");
     }
 
 }
